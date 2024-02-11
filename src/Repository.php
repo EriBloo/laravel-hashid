@@ -6,6 +6,9 @@ use ArrayAccess;
 use Hashids\Hashids;
 use Veelasky\LaravelHashId\Contracts\Repository as RepositoryContract;
 
+/**
+ * @implements ArrayAccess<string, HashIds>
+ */
 class Repository implements RepositoryContract, ArrayAccess
 {
     /**
