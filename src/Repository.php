@@ -95,7 +95,9 @@ class Repository implements RepositoryContract, ArrayAccess
     /** {@inheritdoc} */
     public function offsetSet(mixed $offset, mixed $value): void
     {
-        $this->set($offset, $value);
+        if (is_string($offset)){
+            $this->set($offset, $value);
+        }
     }
 
     /** {@inheritdoc} */
