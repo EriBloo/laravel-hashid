@@ -55,7 +55,7 @@ interface Repository
      * Convert hash to id.
      *
      * @param string      $hash
-     * @param string|null $key
+     * @param string $key
      *
      * @return int|null
      */
@@ -65,7 +65,7 @@ interface Repository
      * Convert id to Hash.
      *
      * @param int         $idKey
-     * @param string|null $key
+     * @param string $key
      *
      * @return string
      */
