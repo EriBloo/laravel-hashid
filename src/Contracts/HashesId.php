@@ -22,7 +22,7 @@ interface HashesId {
      *
      * @return self
      *
-     * @throw \Illuminate\Database\Eloquent\ModelNotFoundException
+     * @throws \Illuminate\Database\Eloquent\ModelNotFoundException
      */
     public static function byHashOrFail(string $hash): self;
 
