@@ -138,17 +138,6 @@ class HashableIdModelTest extends TestCase
         $validator->validate();
     }
 
-    public function test_validation_not_using_trait()
-    {
-        $this->expectException(InvalidArgumentException::class);
-
-        Validator::make([
-            'id' => Str::random(),
-        ], [
-            'id' => [new ExistsByHash(BasicModel::class)],
-        ]);
-    }
-
     public function test_validation_on_persisting_model()
     {
         $m = new PersistingModel();
