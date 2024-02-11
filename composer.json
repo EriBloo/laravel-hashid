@@ -20,8 +20,9 @@
     },
     "require-dev": {
         "roave/security-advisories": "dev-latest",
-        "phpunit/phpunit": ">=10.0",
-        "orchestra/testbench": ">=8.0"
+        "phpunit/phpunit": ">=8.5",
+        "orchestra/testbench": ">=4.0",
+        "larastan/larastan": "^2.8"
     },
     "autoload": {
         "psr-4": {
