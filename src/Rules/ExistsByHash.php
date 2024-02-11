@@ -8,25 +8,19 @@ use Illuminate\Contracts\Validation\ValidatorAwareRule;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Validation\Rules\Exists;
 use Illuminate\Validation\Validator;
-use InvalidArgumentException;
-use Veelasky\LaravelHashId\Eloquent\HashableId;
+use Veelasky\LaravelHashId\Contracts\HashesId;
 
 class ExistsByHash extends Exists implements ValidationRule, ValidatorAwareRule
 {
-    /** @var Model&HashableId */
-    protected Model $model;
+    protected Model&HashesId $model;
     protected Validator $validator;
 
     /**
-     * @param class-string<Model&HashableId> $class
+     * @param class-string<Model&HashesId> $class
      */
     public function __construct(string $class)
     {
         $this->model = new $class();
-
-        if (!method_exists($this->model, 'bootHashableId')) {
-            throw new InvalidArgumentException('Class does not use HashableId');
-        }
 
         parent::__construct($class, $this->model->shouldHashPersist() ? $this->model->getHashColumnName() : $this->model->getKeyName());
     }
