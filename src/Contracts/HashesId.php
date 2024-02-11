@@ -18,13 +18,13 @@ interface HashesId {
     /**
      * Get model by hash or fail.
      *
-     * @param $hash
+     * @param string $hash
      *
      * @return self
      *
      * @throw \Illuminate\Database\Eloquent\ModelNotFoundException
      */
-    public static function byHashOrFail($hash): self;
+    public static function byHashOrFail(string $hash): self;
 
     /**
      * Get Hash Attribute.
